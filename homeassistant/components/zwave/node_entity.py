@@ -91,7 +91,7 @@ class ZWaveBaseEntity(Entity):
             self._update_scheduled = False
 
         self._update_scheduled = True
-        self.hass.loop.call_later(0.1, do_update)
+        self.hass.loop.call_soon(do_update)
 
     def try_remove_and_add(self):
         """Remove this entity and add it back."""
